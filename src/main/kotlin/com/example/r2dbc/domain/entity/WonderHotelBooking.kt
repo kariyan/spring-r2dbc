@@ -1,6 +1,7 @@
 package com.example.r2dbc.domain.entity
 
 import org.springframework.data.annotation.Id
+import org.springframework.data.relational.core.mapping.Column
 
 data class WonderHotelBooking(
     @Id
@@ -8,6 +9,8 @@ data class WonderHotelBooking(
     val bookingId: String,
     val hotelId: Int,
     val wid: Long?,
-    val roomtypeId: String,
-    val roomtypeName: String
+    @Column("roomtype_id")
+    val roomTypeId: String,
+    @Column("roomtype_name")
+    val roomTypeName: String
 )
