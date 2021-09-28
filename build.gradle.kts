@@ -3,8 +3,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "2.5.5"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
+    id("java")
+    id("groovy")
+    id("io.freefair.lombok") version "5.3.0"
     kotlin("jvm") version "1.5.31"
     kotlin("plugin.spring") version "1.5.31"
+    kotlin("plugin.lombok") version "1.5.31"
 }
 
 group = "com.example"
@@ -40,6 +44,10 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
+
+    implementation("org.codehaus.groovy:groovy:3.0.8")
+    testImplementation(platform("org.spockframework:spock-bom:2.0-groovy-3.0"))
+    testImplementation("org.spockframework:spock-core")
 }
 
 tasks.withType<KotlinCompile> {
