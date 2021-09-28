@@ -17,8 +17,8 @@ class DatabaseConfig : AbstractR2dbcConfiguration() {
         val password = "NjI3ZDUwNzM5N2Jj"
         return ConnectionFactories.get(
             ConnectionFactoryOptions.builder()
-                .option(ConnectionFactoryOptions.DRIVER, "mysql")
-                .option(ConnectionFactoryOptions.PROTOCOL, "r2dbc")
+                .option(ConnectionFactoryOptions.DRIVER, "pool")
+                .option(ConnectionFactoryOptions.PROTOCOL, "mysql")
                 .option(ConnectionFactoryOptions.HOST, "nd-integrated.devdb.wemakeprice.work")
                 .option(ConnectionFactoryOptions.PORT, 3307)
                 .option(ConnectionFactoryOptions.DATABASE, "hms_dev")
