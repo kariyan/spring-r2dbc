@@ -34,7 +34,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
-    implementation ("io.github.microutils:kotlin-logging-jvm:2.0.10")
+    implementation("io.github.microutils:kotlin-logging-jvm:2.0.10")
 
     runtimeOnly("com.github.jasync-sql:jasync-r2dbc-mysql:2.0.2")
     runtimeOnly("mysql:mysql-connector-java")

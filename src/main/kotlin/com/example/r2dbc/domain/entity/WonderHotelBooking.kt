@@ -12,5 +12,5 @@ data class WonderHotelBooking(
     @Column("roomtype_id")
     val roomTypeId: String,
     @Column("roomtype_name")
-    val roomTypeName: String
+    var roomTypeName: String
 )
