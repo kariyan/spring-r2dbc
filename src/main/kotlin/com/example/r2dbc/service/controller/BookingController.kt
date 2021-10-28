@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RestController
-import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @RestController
@@ -15,9 +14,9 @@ class BookingController(
     private val bookingService: BookingService,
     private val kmsProperties: Mono<KmsProperties>
 ) {
-    @GetMapping
-    fun findBookingInfo(): Flux<WonderHotelBooking> {
-        return bookingService.findBookings()
+    @GetMapping("/{bookingId}")
+    fun findBookingInfo(@PathVariable bookingId: Long): Mono<WonderHotelBooking> {
+        return bookingService.findBookingById(bookingId)
     }
 
     @PutMapping("/{id}")

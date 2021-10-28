@@ -47,7 +47,7 @@ dependencies {
 
     implementation("org.codehaus.groovy:groovy:3.0.8")
     testImplementation(platform("org.spockframework:spock-bom:2.0-groovy-3.0"))
-    testImplementation("org.spockframework:spock-core")
+    testImplementation("org.spockframework:spock-spring")
 }
 
 tasks.withType<KotlinCompile> {
