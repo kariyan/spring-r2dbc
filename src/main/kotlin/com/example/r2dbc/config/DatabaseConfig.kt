@@ -1,6 +1,7 @@
 package com.example.r2dbc.config
 
 import com.example.r2dbc.config.converter.CodeEnumReadingConverterFactory
+import com.example.r2dbc.config.converter.CodeEnumWritingConverterFactory
 import io.r2dbc.spi.ConnectionFactories
 import io.r2dbc.spi.ConnectionFactory
 import io.r2dbc.spi.ConnectionFactoryOptions
@@ -32,6 +33,7 @@ class DatabaseConfig : AbstractR2dbcConfiguration() {
     override fun getCustomConverters(): List<Any> {
         val converterList = mutableListOf<Any>()
         converterList.add(CodeEnumReadingConverterFactory())
+        converterList.add(CodeEnumWritingConverterFactory())
         return converterList
     }
 }
